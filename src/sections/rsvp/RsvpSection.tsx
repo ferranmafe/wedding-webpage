@@ -1,15 +1,21 @@
 import { useState } from "react";
 import type { FC, FormEvent, ChangeEvent } from "react";
+import { TextInput } from "./components/TextInput";
+import { TextArea } from "./components/TextArea";
+import { RadioInput } from "./components/RadioInput";
+import { SendIcon } from "../../assets/icons/SendIcon";
 
 export const RsvpSection: FC = () => {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     attending: "yes",
-    dietary: "",
-    song: "",
+    message: "",
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -18,96 +24,85 @@ export const RsvpSection: FC = () => {
     e.preventDefault();
     console.log("RSVP Submitted:", formData);
     alert(
-      "¡Gracias por confirmar! Tu respuesta ha sido enviada con éxito. (Demo only)"
+      "¡Gracias por confirmar! Tu respuesta ha sido enviada con éxito. (Demo only)",
     );
   };
 
   return (
-    <section id="rsvp" className="py-8 min-h-screen flex flex-col justify-center items-center bg-bg px-4">
-      <div className="border-4 border-primary p-8 my-8 mx-auto w-full max-w-[800px]" style={{ borderRadius: '255px 15px 225px 15px/15px 225px 15px 255px' }}>
-        <h2 className="font-cursive-bold text-4xl text-primary text-center m-0 mb-2">Confirmación de Asistencia</h2>
-        <p className="font-cursive text-xl text-text-dark text-center mb-8">
-          Por favor, confírmanos tu asistencia antes del 15 de Abril de 2027.
+    <section
+      id="rsvp"
+      className="py-16 min-h-screen flex flex-col items-center bg-bg px-4"
+    >
+      <div className="w-full max-w-[600px] mx-auto text-center">
+        <h2 className="font-cursive-bold text-5xl md:text-6xl text-primary m-0 mb-4 tracking-wide">
+          Confirmar Asistencia
+        </h2>
+        <p className="font-body text-text-dark text-center mb-12 opacity-80 text-lg">
+          Por favor, rellenad el formulario para confirmar vuestra asistencia
         </p>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6 max-w-[500px] mx-auto text-left">
-          <div className="w-full">
-            <label htmlFor="name" className="block font-cursive text-2xl text-text-dark mb-2">
-              Tu(s) Nombre(s)
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full px-4 py-3 text-lg font-body border-2 border-primary bg-bg rounded-[4px_12px_4px_12px] shadow-[2px_2px_0_0_#D05A45] focus:outline-none focus:shadow-[4px_4px_0_0_#D05A45] transition-shadow"
-              placeholder="Ej. Martín y Sofía"
-            />
-          </div>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-8 text-left">
+          {/* Nombre */}
+          <TextInput
+            label="Nombre"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Tu nombre"
+            required
+          />
 
+          {/* Email */}
+          <TextInput
+            label="Email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="tu@email.com"
+            required
+          />
+
+          {/* Attendance Radio */}
           <div className="w-full">
-            <label className="block font-cursive text-2xl text-text-dark mb-2">¿Asistirás?</label>
-            <div className="flex gap-4">
-              <label className="flex items-center gap-2 font-body text-lg cursor-pointer">
-                <input
-                  type="radio"
-                  name="attending"
-                  value="yes"
-                  checked={formData.attending === "yes"}
-                  onChange={handleChange}
-                  className="w-4 h-4 accent-primary"
-                />
-                ¡Sí, allí estaremos!
-              </label>
-              <label className="flex items-center gap-2 font-body text-lg cursor-pointer">
-                <input
-                  type="radio"
-                  name="attending"
-                  value="no"
-                  checked={formData.attending === "no"}
-                  onChange={handleChange}
-                  className="w-4 h-4 accent-primary"
-                />
-                No podremos asistir
-              </label>
+            <label className="block font-cursive text-xl text-primary mb-3">
+              Vas a asistir? *
+            </label>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <RadioInput
+                label="Si, ahi estare!"
+                name="attending"
+                value="yes"
+                checked={formData.attending === "yes"}
+                onChange={handleChange}
+              />
+              <RadioInput
+                label="No puedo asistir"
+                name="attending"
+                value="no"
+                checked={formData.attending === "no"}
+                onChange={handleChange}
+              />
             </div>
           </div>
 
-          <div className="w-full">
-            <label htmlFor="dietary" className="block font-cursive text-2xl text-text-dark mb-2">
-              Alergias / Restricciones Alimentarias
-            </label>
-            <textarea
-              id="dietary"
-              name="dietary"
-              rows={3}
-              value={formData.dietary}
-              onChange={handleChange}
-              className="w-full px-4 py-3 text-lg font-body border-2 border-primary bg-bg rounded-[4px_12px_4px_12px] shadow-[2px_2px_0_0_#D05A45] focus:outline-none focus:shadow-[4px_4px_0_0_#D05A45] transition-shadow resize-y"
-              placeholder="Ej. Sofía es intolerante a la lactosa"
-            ></textarea>
-          </div>
+          {/* Message Textarea */}
+          <TextArea
+            label="Mensaje para los novios"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Dejanos un mensaje..."
+            rows={4}
+          />
 
-          <div className="w-full">
-            <label htmlFor="song" className="block font-cursive text-2xl text-text-dark mb-2">
-              Recomiéndanos una canción
-            </label>
-            <input
-              type="text"
-              id="song"
-              name="song"
-              value={formData.song}
-              onChange={handleChange}
-              className="w-full px-4 py-3 text-lg font-body border-2 border-primary bg-bg rounded-[4px_12px_4px_12px] shadow-[2px_2px_0_0_#D05A45] focus:outline-none focus:shadow-[4px_4px_0_0_#D05A45] transition-shadow"
-              placeholder="Ej. Tusa - Karol G"
-            />
-          </div>
-
-          <div className="text-center mt-4">
-            <button type="submit" className="inline-block px-8 py-3 text-lg font-cursive font-bold rounded-lg transition-transform duration-200 cursor-pointer text-center bg-primary text-white border-2 border-primary shadow-[4px_4px_0_0_#8C7D70] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#8C7D70]">
-              Enviar Confirmación
+          {/* Submit Button */}
+          <div className="mt-4">
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-cursive text-white bg-primary rounded-md transition-opacity hover:opacity-90 cursor-pointer border-none"
+            >
+              <SendIcon />
+              Enviar confirmacion
             </button>
           </div>
         </form>

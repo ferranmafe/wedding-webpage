@@ -1,7 +1,7 @@
 import { Navigation } from "./components/Navigation";
-import { HomeSection } from "./components/HomeSection";
-import { DetailsSection } from "./components/DetailsSection";
-import { RsvpSection } from "./components/RsvpSection";
+import { HomeSection } from "./sections/home/HomeSection";
+import { DetailsSection } from "./sections/details/DetailsSection";
+import { RsvpSection } from "./sections/rsvp/RsvpSection";
 import { Footer } from "./components/Footer";
 
 function App() {
