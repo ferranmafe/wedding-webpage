@@ -18,13 +18,14 @@ export const Footer: FC = () => {
         <h2 className="font-cursive-bold text-4xl text-primary m-0 mb-4 tracking-wide">
           Ferran & María
         </h2>
-        
+
         <p className="font-cursive text-2xl text-text-dark mb-6 opacity-80">
           15 de Mayo, 2027
         </p>
-        
+
         <p className="font-body text-primary text-sm tracking-wide font-medium flex items-center justify-center gap-1 mb-6">
-          Hecho con <span className="text-lg leading-none mt-0.5">♥</span> y mucho asado
+          Hecho con <span className="text-lg leading-none mt-0.5">♥</span> y
+          mucho asado
         </p>
 
         <p className="font-cursive text-xl text-primary/50 italic tracking-wide">
