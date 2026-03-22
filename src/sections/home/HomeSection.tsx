@@ -4,11 +4,11 @@ export const HomeSection: FC = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden p-4"
+      className="min-h-[66vh] flex flex-col justify-center items-center relative overflow-hidden p-4"
       style={{
         backgroundImage: 'url("/landscape.jpg")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div className="absolute inset-0 bg-black/40 z-0 pointer-events-none"></div>
