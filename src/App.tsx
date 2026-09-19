@@ -11,7 +11,7 @@ function App() {
     <>
       <Navigation />
 
-      <main className="pt-10">
+      <main>
         <Home />
         <AboutUs/>
         <Details />
