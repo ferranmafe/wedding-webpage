@@ -1,8 +1,10 @@
 import { Navigation } from "./components/Navigation";
-import { HomeSection } from "./sections/home/HomeSection";
-import { DetailsSection } from "./sections/details/DetailsSection";
-import { RsvpSection } from "./sections/rsvp/RsvpSection";
+import { Home } from "./sections/home";
+import { Details } from "./sections/details";
+import { Rsvp } from "./sections/rsvp";
 import { Footer } from "./components/Footer";
+import { Timeline } from "./sections/timeline";
+import { AboutUs } from "./sections/aboutUs";
 
 function App() {
   return (
@@ -10,9 +12,11 @@ function App() {
       <Navigation />
 
       <main className="pt-10">
-        <HomeSection />
-        <DetailsSection />
-        <RsvpSection />
+        <Home />
+        <AboutUs/>
+        <Details />
+        <Timeline />
+        <Rsvp />
         <Footer />
       </main>
     </>

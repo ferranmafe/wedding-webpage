@@ -4,7 +4,7 @@ import { RsvpError } from "./components/RsvpError";
 import { RsvpStates } from "./types";
 import { RsvpForm } from "./components/RsvpForm";
 
-export const RsvpSection = () => {
+export const Rsvp = () => {
   const [rsvpScreen, setRsvpScreen] = useState<RsvpStates>(RsvpStates.FORM);
 
   if (rsvpScreen === RsvpStates.SUCCESS) {

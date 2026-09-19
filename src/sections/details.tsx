@@ -1,6 +1,6 @@
-export const VenueInfo = () => {
+export const Details = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 mt-8 mb-16">
+    <section id="details" className="w-full max-w-6xl mx-auto px-4 mt-8 mb-16">
       <div className="mb-10 text-left md:ml-8">
         <h2 className="font-cursive-bold text-5xl text-text-dark relative z-10 m-0 inline-block">
           Los Detalles
@@ -58,6 +58,6 @@ export const VenueInfo = () => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

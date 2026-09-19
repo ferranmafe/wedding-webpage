@@ -9,7 +9,10 @@ export default {
       colors: {
         'bg': '#FCF9F2',
         'bg-alt': '#FFFFFF',
-        'primary': '#D05A45',
+        'primary': '#d05243',
+        'primary-hover': '#ba4335',
+        'secondary': '#faeed6',
+        'contrast': '#fffdfb', 
         'text-dark': '#8C7D70',
       },
       fontFamily: {
@@ -18,6 +21,8 @@ export default {
         'display': ['Caveat Brush', 'cursive'],
         'display-alt': ['Caveat', 'cursive'],
         'body': ['Inter', 'sans-serif'],
+        'bebas-neue': ['"Bebas Neue"', 'sans-serif'],
+        'anton': ['"Anton"', 'sans-serif'],
       }
     },
   },
