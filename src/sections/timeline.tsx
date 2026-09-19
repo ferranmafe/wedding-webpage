@@ -6,7 +6,7 @@ type TimelineRowProps = {
 
 const TimelineRow = ({ time, activity, detail }: TimelineRowProps) => {
   return (
-    <div className="py-6 sm:py-8 flex flex-row items-baseline gap-6 sm:gap-12">
+    <div className="py-6 sm:py-8 flex flex-row items-center gap-6 sm:gap-12">
       <div className="w-24 sm:w-32 shrink-0">
         <span className="font-bebas-neue text-4xl sm:text-5xl leading-none tracking-tight text-primary">
           {time}
