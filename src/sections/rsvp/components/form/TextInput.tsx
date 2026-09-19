@@ -19,7 +19,7 @@ export const TextInput = ({
     <div className="w-full">
       <label
         htmlFor={name}
-        className="block font-cursive text-xl text-primary mb-2"
+        className="block font-bebas-neue text-xl tracking-wider uppercase text-secondary mb-2"
       >
         {label + (required ? " *" : "")}
       </label>
@@ -30,7 +30,7 @@ export const TextInput = ({
         required={required}
         value={value}
         onChange={onChange}
-        className="w-full px-4 py-3 text-base font-body border border-primary bg-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow text-text-dark placeholder-text-dark/40"
+        className="w-full px-4 py-3 text-base font-sans border border-secondary/50 bg-transparent rounded-xl focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow text-secondary placeholder-secondary/40"
         placeholder={placeholder}
       />
     </div>

@@ -1,61 +1,64 @@
 export const Details = () => {
   return (
-    <section id="details" className="w-full max-w-6xl mx-auto px-4 mt-8 mb-16">
-      <div className="mb-10 text-left md:ml-8">
-        <h2 className="font-cursive-bold text-5xl text-text-dark relative z-10 m-0 inline-block">
-          Los Detalles
-          <div className="absolute bottom-1 -left-2 -right-2 h-4 bg-primary z-[-1] opacity-20"></div>
-        </h2>
-      </div>
-
-      <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-        {/* Venue Image */}
-        <div className="w-full md:w-1/2">
-          <img
-            src="/venue.jpg"
-            alt="Manso Esmandía Venue"
-            className="w-full h-auto object-cover shadow-sm"
-            style={{ borderRadius: "2px" }}
-          />
+    <section
+      id="details"
+      className="w-full bg-primary text-secondary py-16 md:py-24 px-6 md:px-12"
+    >
+      <div className="max-w-6xl mx-auto flex flex-col items-center">
+        {/* Píldora de cabecera */}
+        <div className="mb-12 md:mb-16">
+          <span className="inline-block border-2 border-secondary px-8 py-2 rounded-full font-bebas-neue tracking-widest text-2xl md:text-3xl uppercase">
+            Los Detalles
+          </span>
         </div>
 
-        {/* Details Text */}
-        <div className="w-full md:w-1/2 flex flex-col items-center justify-center text-center space-y-8">
-          <div className="font-body text-text-dark">
-            <div className="text-3xl mb-3 font-light">
-              Sábado, 15 de Mayo 2027
+        {/* Contenido en dos columnas */}
+        <div className="w-full flex flex-col md:flex-row items-center justify-between gap-10 md:gap-14">
+          {/* Columna Izquierda: Imagen con marco */}
+          <div className="w-full md:w-1/2 flex justify-center items-center">
+            <div className="w-full max-w-xl aspect-[4/3] overflow-hidden rounded-3xl border-2 border-secondary shadow-md">
+              <img
+                src="/venue.jpg"
+                alt="Manso Esmandía Venue"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
-            <div className="text-3xl font-light">13:00 h</div>
           </div>
 
-          <div className="font-body text-lg text-text-dark/90 max-w-sm font-light leading-relaxed">
-            Manso Esmandía, C-251, Km. 2, 5<br />
-            08440 Cardedeu, Barcelona, Catalunya
-          </div>
+          {/* Columna Derecha: Información tipográfica */}
+          <div className="w-full md:w-1/2 flex flex-col items-center text-center">
+            {/* Fecha y Hora */}
+            <h3 className="font-bebas-neue uppercase text-4xl sm:text-5xl lg:text-6xl tracking-wide leading-none mb-3">
+              Sábado, 15 de Mayo 2027
+            </h3>
+            <p className="font-bebas-neue text-2xl sm:text-3xl tracking-widest mb-6">
+              13:00 h
+            </p>
 
-          <div className="flex flex-col items-center gap-4 font-body text-base">
-            <a
-              href="https://maps.app.goo.gl/tjN5C19xn6L2gofC6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:opacity-70 transition-opacity"
-            >
-              Ver en Google Maps
-            </a>
-            <a
-              href="#"
-              className="text-primary hover:opacity-70 transition-opacity"
-            >
-              Añadir al Calendario
-            </a>
-          </div>
+            {/* Dirección */}
+            <p className="text-secondary/90 text-sm sm:text-base font-sans tracking-wider uppercase leading-relaxed max-w-sm mb-8">
+              Manso Esmandía, C-251, Km. 2, 5<br />
+              08440 Cardedeu, Barcelona, Catalunya
+            </p>
 
-          <a
-            href="#rsvp"
-            className="mt-6 border border-text-dark text-text-dark px-14 py-3 text-sm font-body uppercase tracking-widest hover:bg-text-dark hover:text-white transition-colors"
-          >
-            RSVP
-          </a>
+            {/* Botonera de acciones */}
+            <div className="flex flex-wrap justify-center gap-4 font-bebas-neue uppercase tracking-widest text-base sm:text-lg">
+              <a
+                href="https://maps.app.goo.gl/tjN5C19xn6L2gofC6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-secondary text-primary px-6 py-2.5 rounded-xl hover:brightness-95 transition-all"
+              >
+                Ver en Maps
+              </a>
+              <a
+                href="#"
+                className="border-2 border-secondary text-secondary px-6 py-2.5 rounded-xl hover:bg-secondary/10 transition-colors"
+              >
+                Añadir al Calendario
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
