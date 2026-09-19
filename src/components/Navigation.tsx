@@ -12,14 +12,14 @@ const NavLink = ({
   onClick?: () => void;
 }) => {
   return (
-    <li className={isButton ? "w-full flex justify-center" : ""}>
+    <li className={isButton ? "w-full md:w-auto flex justify-center" : ""}>
       <a
         href={href}
         onClick={onClick}
         className={
           isButton
-            ? "inline-block max-w-xs text-center py-2.5 px-5 w-4/5 text-xl md:text-lg tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary-hover shadow-sm transition-all"
-            : "inline-block py-1 px-2 text-xl md:text-lg tracking-widest text-primary hover:text-primary-hover font-medium transition-colors"
+            ? "whitespace-nowrap inline-block max-w-xs text-center py-2.5 px-5 w-4/5 md:w-auto text-xl md:text-lg tracking-widest bg-primary text-secondary rounded-xl hover:bg-primary-hover shadow-sm transition-all"
+            : "whitespace-nowrap inline-block py-1 px-2 text-xl md:text-lg tracking-widest text-primary hover:text-primary-hover font-medium transition-colors"
         }
       >
         {children}
@@ -47,7 +47,7 @@ export const Navigation = () => {
 
         {/* 2. Enlaces escritorio */}
         <nav aria-label="Navegación principal" className="hidden md:flex">
-          <ul className="flex flex-row items-center gap-8">
+          <ul className="flex flex-row items-center gap-6 md:gap-8">
             <NavLink href="#home">Inicio</NavLink>
             <NavLink href="#details">Detalles</NavLink>
             <NavLink href="#timeline">Plan del día</NavLink>
