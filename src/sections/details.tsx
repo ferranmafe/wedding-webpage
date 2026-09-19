@@ -18,7 +18,7 @@ export const Details = () => {
           <div className="w-full md:w-1/2 flex justify-center items-center">
             <div className="w-full max-w-xl aspect-[4/3] overflow-hidden rounded-3xl border-2 border-secondary shadow-md">
               <img
-                src="/venue.jpg"
+                src={`${import.meta.env.BASE_URL}venue.jpg`}
                 alt="Manso Esmandía Venue"
                 className="w-full h-full object-cover object-center"
               />

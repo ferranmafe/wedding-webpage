@@ -47,7 +47,7 @@ export const Home = () => {
       <div className="w-full md:w-1/2 flex justify-center items-center p-2 sm:p-4">
         <div className="w-full max-w-2xl aspect-[4/3] lg:aspect-[16/11] overflow-hidden rounded-3xl border-2 border-primary shadow-md">
           <img
-            src="landscape.jpg"
+            src={`${import.meta.env.BASE_URL}landscape.jpg`}
             alt="María y Ferran"
             className="w-full h-full object-cover object-center"
           />
